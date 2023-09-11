@@ -31,7 +31,8 @@ export function LivenessQuickStart() {
       },
     });
 
-    if (data.isLive) {
+    console.log(data);
+    if (data.response.Confidence > 0.9) {
       setSuccess("User is live");
       console.log("live");
     } else {

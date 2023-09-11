@@ -39,9 +39,7 @@ app.get("/faceliveness/get", async function (req, res) {
     SessionId: req.query.sessionId,
   });
 
-  const isLive = response.Confidence > 90;
-
-  res.status(200).json({ isLive });
+  res.status(200).json({ response });
 });
 
 app.listen(3000, function () {
