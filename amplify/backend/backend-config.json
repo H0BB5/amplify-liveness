@@ -1,0 +1,92 @@
+{
+  "api": {
+    "faceliveness": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "faceliveness"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "facelivenesspublic210ecc6d210ecc6d": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "detection": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "faceliveness": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_detection_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "detection"
+        }
+      ]
+    },
+    "AMPLIFY_function_detection_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "detection"
+        }
+      ]
+    },
+    "AMPLIFY_function_faceliveness_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "faceliveness"
+        }
+      ]
+    },
+    "AMPLIFY_function_faceliveness_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "faceliveness"
+        }
+      ]
+    }
+  }
+}

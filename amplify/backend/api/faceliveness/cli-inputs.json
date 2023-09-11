@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/faceliveness": {
+      "name": "/faceliveness",
+      "lambdaFunction": "faceliveness",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Action": [
+      "rekognition:CreateFaceLivenessSession",
+      "rekognition:GetFaceLivenessSessionResults",
+      "rekognition:StartFaceDetection"
+    ],
+    "Resource": ["*"]
+  }
+]
